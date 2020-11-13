@@ -3,7 +3,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import { AppProps } from 'next/app';
 import React from 'react';
 
-import { theme } from '@/theme/theme';
+import { theme } from '@/src/theme/theme';
 
 const App = (props: AppProps) => {
   const { Component, pageProps } = props;

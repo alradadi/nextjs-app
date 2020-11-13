@@ -8,7 +8,7 @@ import Document, {
 } from 'next/document';
 import React from 'react';
 
-import { theme } from '@/theme/theme';
+import { theme } from '@/src/theme/theme';
 
 class CustomDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
