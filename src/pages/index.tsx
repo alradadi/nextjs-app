@@ -1,7 +1,11 @@
 import axios from 'axios';
 import Head from 'next/head';
 import Link from 'next/link';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
+import { increment, selectCount } from '@/src/redux/slices/counterSlice';
+import { useActions } from '@/src/redux/useActions';
 import styles from '@/src/styles/Home.module.css';
 import { Post } from '@/src/types';
 
@@ -10,6 +14,10 @@ interface Props {
 }
 
 export default function HomePage({ posts }: Props) {
+  const count = useSelector(selectCount);
+
+  const actions = useActions({ increment });
+
   return (
     <div className={styles.container}>
       <Head>
@@ -32,6 +40,14 @@ export default function HomePage({ posts }: Props) {
           ))}
         </ul>
       </main>
+
+      <div>
+        <p>
+          Global Counter: {count}{' '}
+          <button onClick={() => actions.increment()}>increment</button>
+        </p>
+        <Link href="/counter">Go to counter page</Link>
+      </div>
 
       <footer className={styles.footer}>
         <a

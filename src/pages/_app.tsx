@@ -1,15 +1,18 @@
 import { AppProps } from 'next/app';
 import React from 'react';
 
+import StoreProvider from '@/src/redux/StoreProvider';
 import ThemeProvider from '@/src/theme/ThemeProvider';
 
 const App = (props: AppProps) => {
   const { Component, pageProps } = props;
 
   return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <StoreProvider>
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </StoreProvider>
   );
 };
 
