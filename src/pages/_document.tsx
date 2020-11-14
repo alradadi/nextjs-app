@@ -8,7 +8,7 @@ import Document, {
 } from 'next/document';
 import React from 'react';
 
-import { theme } from '@/src/theme/theme';
+import { createTheme } from '@/src/theme/createTheme';
 
 class CustomDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -32,8 +32,10 @@ class CustomDocument extends Document {
   }
 
   render() {
+    const direction = this.props.locale === 'ar' ? 'rtl' : 'ltr';
+    const theme = createTheme({ direction });
     return (
-      <Html lang="en">
+      <Html>
         <Head>
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
@@ -41,7 +43,7 @@ class CustomDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
         </Head>
-        <body>
+        <body dir={direction}>
           <Main />
           <NextScript />
         </body>
