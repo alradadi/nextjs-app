@@ -11,8 +11,8 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { useActions } from '@/src/redux/hooks/useActions';
 import { decrement, selectCount } from '@/src/redux/slices/counterSlice';
-import { useActions } from '@/src/redux/useActions';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

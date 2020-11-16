@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import React from 'react';
 
-import StoreProvider from '@/src/redux/StoreProvider';
+import StoreProvider from '@/src/redux/providers/StoreProvider';
 import ThemeProvider from '@/src/theme/ThemeProvider';
 
 const App = (props: AppProps) => {

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { useActions } from '@/src/redux/hooks/useActions';
 import { increment, selectCount } from '@/src/redux/slices/counterSlice';
-import { useActions } from '@/src/redux/useActions';
 import styles from '@/src/styles/Home.module.css';
 import { Post } from '@/src/types';
 
